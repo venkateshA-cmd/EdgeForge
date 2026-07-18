@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EdgeForge Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="background-glow glow1"></div>
+<div class="background-glow glow2"></div>
+
+<div class="dashboard">
+
+    <!-- =============================== -->
+    <!-- Header -->
+    <!-- =============================== -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>🛡 EdgeForge</h1>
+
+            <p>
+                AI Software Verification Platform
+            </p>
+
+        </div>
+
+        <div class="file-info">
+
+            <span>Analyzed File</span>
+
+            <h3>{{ filename }}</h3>
+
+        </div>
+
+    </header>
+
+    <!-- =============================== -->
+    <!-- Empty Warning -->
+    <!-- =============================== -->
+
+    {% if empty_file %}
+
+    <section class="warning-box">
+
+        <h2>⚠ Empty Python File</h2>
+
+        <p>
+
+            The uploaded file does not contain any
+            executable Python code.
+
+        </p>
+
+    </section>
+
+    {% endif %}
+
+    <!-- =============================== -->
+    <!-- Dashboard Cards -->
+    <!-- =============================== -->
+
+    <section class="summary-grid">
+
+        <div class="summary-card">
+
+            <div class="icon">
+                📦
+            </div>
+
+            <h2>
+
+                {{ summary.functions }}
+
+            </h2>
+
+            <p>
+
+                Functions
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="icon">
+                🧩
+            </div>
+
+            <h2>
+
+                {{ summary.classes }}
+
+            </h2>
+
+            <p>
+
+                Classes
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="icon">
+                🔍
+            </div>
+
+            <h2>
+
+                {{ summary.findings }}
+
+            </h2>
+
+            <p>
+
+                Findings
+
+            </p>
+
+        </div>
+
+        <div class="summary-card">
+
+            <div class="icon">
+                🧪
+            </div>
+
+            <h2>
+
+                {{ summary.test_cases }}
+
+            </h2>
+
+            <p>
+
+                Test Cases
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =============================== -->
+    <!-- Risk + Report -->
+    <!-- =============================== -->
+
+    <section class="overview">
+
+        <div class="panel">
+
+            <h2>
+
+                Risk Assessment
+
+            </h2>
+
+            <div class="risk-circle risk-{{ risk|lower }}">
+
+                {{ risk }}
+
+            </div>
+
+            <p>
+
+                {% if risk=="LOW" %}
+
+                Excellent code quality.
+
+                {% elif risk=="MEDIUM" %}
+
+                Review recommended.
+
+                {% else %}
+
+                Immediate attention required.
+
+                {% endif %}
+
+            </p>
+
+        </div>
+
+        <div class="panel">
+
+            <h2>
+
+                HTML Report
+
+            </h2>
+
+            {% if empty_file %}
+
+            <p>
+
+                No report generated.
+
+            </p>
+
+            {% else %}
+
+            <p>
+
+                Report generated successfully.
+
+            </p>
+
+            <a href="/download-report"
+               class="download-btn">
+
+                ⬇ Download Report
+
+            </a>
+
+            <small>
+
+                {{ report_location }}
+
+            </small>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    <!-- =============================== -->
+    <!-- Findings -->
+    <!-- =============================== -->
+
+    <section class="panel">
+
+        <div class="section-title">
+
+            <h2>
+
+                Static Analysis Findings
+
+            </h2>
+
+            <span>
+
+                {{ summary.findings }}
+
+            </span>
+
+        </div>
+
+        {% if findings %}
+
+        <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>Severity</th>
+
+                <th>Function</th>
+
+                <th>Issue</th>
+
+                <th>Description</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for finding in findings %}
+
+            <tr>
+
+                <td>
+
+                    <span class="severity severity-{{ finding.severity|lower }}">
+
+                        {{ finding.severity }}
+
+                    </span>
+
+                </td>
+
+                <td>
+
+                    {{ finding.function_name }}
+
+                </td>
+
+                <td>
+
+                    {{ finding.title }}
+
+                </td>
+
+                <td>
+
+                    {{ finding.description }}
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state">
+
+            <h3>
+
+                🎉 No Issues Found
+
+            </h3>
+
+            <p>
+
+                Your source code passed the current
+                static analysis checks.
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+        <!-- =============================== -->
+    <!-- Generated Test Cases -->
+    <!-- =============================== -->
+
+    <section class="panel">
+
+        <div class="section-title">
+
+            <h2>
+
+                Generated Edge Test Cases
+
+            </h2>
+
+            <span>
+
+                {{ summary.test_cases }}
+
+            </span>
+
+        </div>
+
+        {% if test_cases %}
+
+        <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>Function</th>
+
+                <th>Inputs</th>
+
+                <th>Reason</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for test in test_cases %}
+
+            <tr>
+
+                <td>
+
+                    {{ test.function_name }}
+
+                </td>
+
+                <td>
+
+                    <code>
+
+                        {{ test.inputs }}
+
+                    </code>
+
+                </td>
+
+                <td>
+
+                    {{ test.reason }}
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state">
+
+            <h3>
+
+                🧪 No Test Cases Generated
+
+            </h3>
+
+            <p>
+
+                EdgeForge could not generate test cases
+                because no eligible functions were found.
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+    <!-- =============================== -->
+    <!-- Code Quality -->
+    <!-- =============================== -->
+
+    <section class="quality-card">
+
+        <h2>
+
+            Code Quality Overview
+
+        </h2>
+
+        {% if risk=="LOW" %}
+
+        <div class="progress">
+
+            <div class="progress-fill progress-low"
+                 style="width:95%;"></div>
+
+        </div>
+
+        <h3>
+
+            ⭐ Excellent
+
+        </h3>
+
+        <p>
+
+            Your code appears clean and maintainable.
+
+        </p>
+
+        {% elif risk=="MEDIUM" %}
+
+        <div class="progress">
+
+            <div class="progress-fill progress-medium"
+                 style="width:65%;"></div>
+
+        </div>
+
+        <h3>
+
+            ⚠ Needs Review
+
+        </h3>
+
+        <p>
+
+            Some issues should be reviewed before deployment.
+
+        </p>
+
+        {% else %}
+
+        <div class="progress">
+
+            <div class="progress-fill progress-high"
+                 style="width:35%;"></div>
+
+        </div>
+
+        <h3>
+
+            ❌ High Risk
+
+        </h3>
+
+        <p>
+
+            Significant issues were detected that should be
+            fixed before release.
+
+        </p>
+
+        {% endif %}
+
+    </section>
+
+    <!-- =============================== -->
+    <!-- Footer Actions -->
+    <!-- =============================== -->
+
+    <section class="actions">
+
+        <a href="/"
+           class="primary-btn">
+
+            📂 Analyze Another File
+
+        </a>
+
+        {% if not empty_file %}
+
+        <a href="/download-report"
+           class="secondary-btn">
+
+            📥 Download HTML Report
+
+        </a>
+
+        {% endif %}
+
+    </section>
+
+    <!-- =============================== -->
+    <!-- Footer -->
+    <!-- =============================== -->
+
+    <footer class="footer">
+
+        <p>
+
+            EdgeForge v1.0 • AI Software Verification Platform
+
+        </p>
+
+        <p>
+
+            Static Analysis • Edge Case Generation • HTML Reporting
+
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>
