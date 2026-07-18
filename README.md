@@ -189,3 +189,208 @@ Open your browser
 ```
 http://127.0.0.1:5000
 ```
+
+---
+
+# 🚀 Usage
+
+## Step 1 — Upload a Python File
+
+Open the web application and upload any valid Python (.py) source file.
+
+Examples include:
+
+- Simple Python scripts
+- Object-Oriented Programs
+- Flask Applications
+- Utility Modules
+- Algorithm Implementations
+
+---
+
+## Step 2 — Automatic Analysis
+
+EdgeForge automatically performs several analysis stages:
+
+- Parses the Abstract Syntax Tree (AST)
+- Detects functions and classes
+- Extracts parameters
+- Analyzes potential risks
+- Generates edge-case test scenarios
+- Calculates project statistics
+- Builds a complete HTML report
+
+---
+
+## Step 3 — View Dashboard
+
+The dashboard displays:
+
+- Total Functions
+- Total Classes
+- Total Parameters
+- Risk Score
+- Findings
+- Generated Edge Cases
+
+---
+
+## Step 4 — Download Report
+
+Generate a professional HTML report that can be shared, archived, or used for documentation.
+
+---
+
+# 🧪 Testing
+
+EdgeForge has been tested using multiple Python source files covering a wide range of scenarios.
+
+### Test Coverage
+
+| Test | Status |
+|-------|--------|
+| Empty File | ✅ |
+| Syntax Errors | ✅ |
+| Functions | ✅ |
+| Nested Functions | ✅ |
+| Multiple Classes | ✅ |
+| OOP Programs | ✅ |
+| Async Functions | ✅ |
+| Decorators | ✅ |
+| Unicode Support | ✅ |
+| Large Files | ✅ |
+| Recursion | ✅ |
+| Loops | ✅ |
+
+---
+
+# 📊 Analysis Capabilities
+
+EdgeForge currently analyzes:
+
+- Python Functions
+- Class Definitions
+- Method Parameters
+- Return Statements
+- Nested Functions
+- Async Functions
+- Decorators
+- Object-Oriented Structures
+- Syntax Errors
+- Code Complexity Indicators
+
+---
+
+# 🛠 Technologies Used
+
+## Backend
+
+- Python
+- Flask
+
+## Parsing Engine
+
+- Python AST Module
+
+## Frontend
+
+- HTML5
+- CSS3
+
+## Reports
+
+- HTML Report Generator
+
+## Version Control
+
+- Git
+- GitHub
+
+---
+
+# 📈 Project Workflow
+
+```
+Upload Python File
+        │
+        ▼
+AST Parsing
+        │
+        ▼
+Structure Extraction
+        │
+        ▼
+Static Analysis
+        │
+        ▼
+Edge Case Generation
+        │
+        ▼
+Risk Assessment
+        │
+        ▼
+HTML Report Generation
+        │
+        ▼
+Dashboard Visualization
+```
+
+---
+
+# 📌 Sample Project Output
+
+EdgeForge provides:
+
+- Project Statistics
+- Function Inventory
+- Class Inventory
+- Parameter Information
+- Edge Test Cases
+- Code Findings
+- Risk Analysis
+- Downloadable HTML Reports
+
+---
+
+# 🎯 Use Cases
+
+EdgeForge is useful for:
+
+- Students learning Python
+- Software Engineering Labs
+- Static Code Analysis
+- Code Reviews
+- Academic Projects
+- Software Testing
+- Edge Case Discovery
+- Python Learning
+- Teaching AST Concepts
+- Flask Development Demonstrations
+
+---
+
+# 📄 Requirements
+
+- Python 3.10+
+- Flask
+- Modern Web Browser
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run:
+
+```bash
+python app.py
+```
+
+Open:
+
+```
+http://127.0.0.1:5000
+```
+
+---
