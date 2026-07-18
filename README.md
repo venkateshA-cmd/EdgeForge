@@ -394,3 +394,126 @@ http://127.0.0.1:5000
 ```
 
 ---
+
+# 🌟 Key Highlights
+
+- 🚀 Modern Flask-based Web Application
+- 🧠 Python AST (Abstract Syntax Tree) Parsing
+- 🔍 Static Code Analysis
+- ⚡ Automatic Edge Case Generation
+- 📊 Interactive Analysis Dashboard
+- 📄 Professional HTML Report Generation
+- 🛡️ Syntax Error Detection
+- 🧪 Comprehensive Test Coverage
+- 📦 Clean Project Architecture
+- 💻 Beginner-Friendly User Interface
+
+---
+
+# 🛣️ Roadmap
+
+## Version 1.1
+
+- [ ] PDF Report Export
+- [ ] CSV Report Export
+- [ ] Code Complexity Metrics
+- [ ] Function Dependency Graph
+- [ ] Duplicate Code Detection
+
+## Version 1.2
+
+- [ ] Multi-file Project Analysis
+- [ ] ZIP Upload Support
+- [ ] Batch Processing
+- [ ] Enhanced Risk Scoring
+
+## Version 2.0
+
+- [ ] AI-powered Code Suggestions
+- [ ] Code Refactoring Recommendations
+- [ ] REST API
+- [ ] Docker Support
+- [ ] User Authentication
+- [ ] Project History Dashboard
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you would like to improve EdgeForge:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Push your branch.
+5. Open a Pull Request.
+
+Please keep pull requests focused and include clear descriptions of your changes.
+
+---
+
+# 🐞 Reporting Issues
+
+If you discover a bug or have a feature request:
+
+- Open a GitHub Issue.
+- Include steps to reproduce the problem.
+- Describe the expected and actual behavior.
+- Attach screenshots if applicable.
+
+---
+
+# 📚 Learning Goals
+
+EdgeForge demonstrates practical concepts including:
+
+- Python Programming
+- Flask Web Development
+- Static Code Analysis
+- Abstract Syntax Trees (AST)
+- Software Testing
+- Edge Case Generation
+- Software Engineering Practices
+- Git & GitHub Workflows
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+See the `LICENSE` file for more information.
+
+---
+
+# 👨‍💻 Author
+
+**Venkatesh A**
+
+- GitHub: https://github.com/venkateshA-cmd
+
+---
+
+# ⭐ Support
+
+If you found this project useful:
+
+- ⭐ Star this repository
+- 🍴 Fork it
+- 📢 Share it with others
+
+Your support helps improve the project and encourages future development.
+
+---
+
+<div align="center">
+
+## 🚀 EdgeForge
+
+**Analyze Better • Test Smarter • Build Stronger**
+
+Made with ❤️ using Python & Flask.
+
+</div>
