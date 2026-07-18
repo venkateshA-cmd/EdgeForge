@@ -6,6 +6,14 @@
 
 Analyze Python source code, detect potential issues, assess code quality, and automatically generate edge test cases through an intuitive Flask-based web interface.
 
+# 🚀 EdgeForge
+
+## 🌐 Live Demo
+
+https://edgeforge-pz9o.onrender.com
+
+AI-Powered Python Static Analysis & Edge Case Generation Platform
+
 ---
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
